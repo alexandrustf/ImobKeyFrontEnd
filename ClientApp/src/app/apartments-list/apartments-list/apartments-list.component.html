@@ -1,0 +1,32 @@
+<div class="apartments-rent-page-container">
+  <div class="subheader-rent-apartments">
+    <app-filters (filteredModel)="this.filterModel = $event"></app-filters>
+    <div class="see-map-toggle">
+      <h5>Harta</h5>
+      <label class="switch">
+        <input type="checkbox" (change)="this.mapToggle = !this.mapToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="apartments-search-container">
+    <app-cards-list
+      [className]="this.mapToggle === true ? 'no-display' : 'some-class'"
+      [filteredModel]="this.filterModel"
+      (apartmentsListEmit)="this.apartmentsList = $event"
+    ></app-cards-list>
+    <app-map
+      [apartmentsList]="this.apartmentsList"
+      class="map-container-component"
+      *ngIf="this.mapToggle === true"
+    ></app-map>
+  </div>
+</div>
+<div class="pagination-controls-container">
+  <app-pagination
+    *ngIf="this.apartmentsPageModel"
+    [filterModel]="this.filterModel"
+    [totalNumberOfRecords]="this.apartmentsPageModel.totalNumberOfRecords"
+    (filteredModel)="this.filterModel = $event"
+  ></app-pagination>
+</div>

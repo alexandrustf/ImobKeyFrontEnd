@@ -1,0 +1,41 @@
+::ng-deep {
+  .overlay-container #toast-container {
+    width: 820px;
+    margin: auto;
+    margin-bottom: 40px;
+
+    .toast {
+      box-shadow: none;
+
+      .toastr-background {
+        border-radius: 12px;
+        min-height: 72px;
+        height: auto;
+
+        .toast-icon {
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+        }
+
+        .toast-content {
+          align-self: center;
+        }
+      }
+
+      &.toast-success .toastr-background {
+        background-color: green;
+
+        .toast-icon {
+          background-color: green;
+        }
+      }
+    }
+  }
+}
+
+@include until-tablet {
+  ::ng-deep .overlay-container #toast-container {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}

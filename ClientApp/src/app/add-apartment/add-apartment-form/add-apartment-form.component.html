@@ -1,0 +1,216 @@
+<div class="card-body" class="card">
+  <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
+    <div class="add-apartment-container">
+      <div class="add-images-container">
+        <div class="form-group">
+          <label for="file">Adauga pozele cu apartamentul tau: *</label>
+          <input
+            multiple
+            class="form-control"
+            type="file"
+            (change)="onFileChanged($event)"
+            formControlName="image"
+            accept="image/jpg,image/jpeg"
+          />
+        </div>
+      </div>
+
+      <div class="add-location-container" class="form-group">
+        <div class="form-group">
+          <label for="zona">Zona: *</label>
+          <div class="location-icon"></div>
+          <select
+            aria-placeholder="Zone"
+            class="filter-button"
+            (change)="selectChangeHandler($event)"
+          >
+            <option value="" selected>Zone</option>
+            <option
+              *ngFor="let location of locations"
+              value="{{ location.id }}"
+            >
+              {{ location.name }}</option
+            >
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Adresa exacta(Muta pin-ul in locatia exacta): *</label>
+        <app-map-add-apartment
+          (selectedLocation)="this.PreciseLocation = $event"
+        ></app-map-add-apartment>
+      </div>
+      <div class="add-properties-container">
+        <div class="form-group">
+          <label for="title">Titlul anuntului: *</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="title"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="number-of-rooms">Numarul de camere: *</label>
+          <input
+            class="form-control"
+            type="number"
+            name="min-price"
+            min="0"
+            max="100"
+            formControlName="numberOfRooms"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label> Suprafata Utila: *</label>
+          <input
+            class="form-control"
+            type="number"
+            name="min-price"
+            min="0"
+            formControlName="area"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label> Compartimentare: *</label>
+          <select
+            class="form-control"
+            type="number"
+            name="min-price"
+            min="0"
+            formControlName="compartimentare"
+          >
+            <option value="Decomandat">Decomandat</option>
+            <option value="Semidecomandat">Semidecomandat</option>
+            <option value="Nedecomandat">Nedecomandat</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label> Etaj: *</label>
+          <input
+            class="form-control"
+            type="number"
+            name="min-price"
+            min="0"
+            formControlName="floor"
+          />
+        </div>
+
+        <div class="form-group">
+          <label> Numarul de etaje al cladirii:</label>
+          <input
+            class="form-control"
+            type="number"
+            name="min-price"
+            min="0"
+            formControlName="totalNumberOfFloors"
+          />
+        </div>
+
+        <div class="form-group">
+          <label> Descriere:</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label> Numarul de bai:</label>
+          <input
+            class="form-control"
+            type="number"
+            name="min-price"
+            min="0"
+            formControlName="numberOfBathRooms"
+          />
+        </div>
+        <div class="form-group">
+          <label> Anul in care a fost contruita cladirea:</label>
+          <input
+            class="form-control"
+            type="number"
+            name="min-price"
+            min="1920"
+            max="2020"
+            formControlName="constructionYear"
+          />
+        </div>
+        <div class="form-group">
+          <label> Nivelul de confort:</label>
+          <input
+            class="form-control"
+            type="number"
+            name="min-price"
+            min="1"
+            max="10"
+            formControlName="confort"
+          />
+        </div>
+        <div class="form-group">
+          <label> Numarul de telefon: *</label>
+          <input
+            class="form-control"
+            type="tel"
+            formControlName="phone"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label> Vezi pretul apartamentului tau conform pietei </label>
+          <div class="corect-price-container">
+            <a
+              mat-button
+              color="primary"
+              class="ideal-price-button"
+              (click)="checkIdealPrice()"
+            >
+              Vezi pretul ideal
+            </a>
+            <label> Pret: (Euro pe lună)*</label>
+            <h4 *ngIf="this.idealPrice">
+              Pretul pietei este: {{ this.idealPrice }} Euro/lună
+            </h4>
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="number"
+            min="1"
+            formControlName="price"
+            required
+          />
+        </div>
+      </div>
+      <label
+        >Trebuie sa completezi toate câmpurile obligatorii, marcate cu *, pentru
+        a apasa butonul de Adaugă Apartament</label
+      >
+
+      <button
+        type="submit"
+        id="add-apartment-button"
+        [disabled]="!apartmentForm.valid"
+      >
+        Adaugă Apartament
+      </button>
+    </div>
+  </form>
+  <app-spinner *ngIf="this.loading"></app-spinner>
+  <!-- <p>Form Status: {{ apartmentForm.status }}</p> -->
+  <div id="response" *ngIf="this.added">
+    Apartament adăugat cu success!
+  </div>
+</div>
+<!-- margin: auto;
+justify-content: center;
+width: 100%;
+background: blue;
+color: white;
+border: coral; -->

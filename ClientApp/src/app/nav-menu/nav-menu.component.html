@@ -1,0 +1,58 @@
+<mat-toolbar>
+  <div class="header-container">
+    <mat-toolbar class="header-container">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="logo-container">
+        <!-- <img
+          class="logo"
+          src="/src/assets/images/logo-apartments.png"
+          [routerLink]="['/']"
+        /> -->
+
+        <img src="../../../assets/images/logo-apartments.png" id="logo" alt="Logo" />
+
+      </div>
+      <!-- <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items"> -->
+      <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px">
+          <div class="navigation-bar-item-container" [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+
+            <a class="navigation-bar-item" [routerLink]="['/']">Acasă</a>
+
+          </div>
+          <div class="navigation-bar-item-container" [routerLinkActive]="['link-active']"
+            [routerLinkActive]="['active-link']">
+            <a class="navigation-bar-item" [routerLink]="['/apartments-rent']"
+              [routerLinkActive]="['active-link']">Închirieri</a>
+          </div>
+
+          <div class="navigation-bar-item-container" [routerLinkActive]="['link-active']">
+            <a class="navigation-bar-item" [routerLink]="['/perfect-home']" [routerLinkActive]="['active-link']">Casa
+              Perfectă
+            </a>
+          </div>
+          <div class="navigation-bar-item-container" [routerLinkActive]="['link-active']">
+            <a class="navigation-bar-item" [routerLink]="['/favorite-apartments']"
+              [routerLinkActive]="['active-link']">Contul meu</a>
+          </div>
+          <div class="navigation-bar-item-container" [routerLinkActive]="['link-active']">
+            <a class="navigation-bar-item" [routerLink]="['/my-account']" (click)="logout()">Log Out</a>
+          </div>
+          <div class="navigation-bar-item-container" id="add-apartment-button-container"
+            [routerLinkActive]="['link-active']" [routerLinkActive]="['active-link']">
+            <a class="navigation-bar-item" [routerLink]="['/add-apartment']" [routerLinkActive]="['active-link']">Adaugă
+              Anunț</a>
+
+
+          </div>
+        </ul>
+      </div>
+    </mat-toolbar>
+  </div>
+</mat-toolbar>

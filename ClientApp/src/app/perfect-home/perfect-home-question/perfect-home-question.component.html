@@ -1,0 +1,233 @@
+<div [ngSwitch]="this.step" #question>
+  <div class="question-container" *ngSwitchCase="1">
+    <div class="step">
+      <p>Pasul {{ this.step }}</p>
+    </div>
+    <div class="question-text">
+      <p>
+        Ești student/elev?
+      </p>
+      <form>
+        <button
+          type="button"
+          mat-raised-button
+          color="primary"
+          (click)="toggleMap(target)"
+        >
+          Da
+        </button>
+        <button
+          (click)="this.SkipQuestion(question)"
+          type="button"
+          mat-raised-button
+          color="warn"
+        >
+          Nu
+        </button>
+      </form>
+    </div>
+    <div class="illustration">
+      <img src="../../../assets/icons/STUDENT.png" alt="Sleeping student" />
+    </div>
+  </div>
+
+  <div class="question-container" *ngSwitchCase="2">
+    <div class="step">
+      <p>Pasul {{ this.step }}</p>
+    </div>
+    <div class="question-text">
+      <p>
+        Ești angajat?
+      </p>
+      <form>
+        <button
+          type="button"
+          mat-raised-button
+          color="primary"
+          (click)="toggleMap(target)"
+        >
+          Da
+        </button>
+        <button
+          (click)="this.SkipQuestion(question)"
+          type="button"
+          mat-raised-button
+          color="warn"
+        >
+          Nu
+        </button>
+      </form>
+    </div>
+    <div class="illustration">
+      <img src="../../../assets/icons/munca.png" alt="Sleeping student" />
+    </div>
+  </div>
+
+  <div class="question-container" *ngSwitchCase="3">
+    <div class="step">
+      <p>Pasul {{ this.step }}</p>
+    </div>
+    <div class="question-text">
+      <p>
+        Ai copii?
+      </p>
+      <form>
+        <button
+          type="button"
+          mat-raised-button
+          color="primary"
+          (click)="toggleMap(target)"
+        >
+          Da
+        </button>
+        <button
+          (click)="this.SkipQuestion(question)"
+          type="button"
+          mat-raised-button
+          color="warn"
+        >
+          Nu
+        </button>
+      </form>
+    </div>
+    <div class="illustration">
+      <img src="../../../assets/icons/FAMILY.png" alt="Sleeping student" />
+    </div>
+  </div>
+
+  <div class="question-container" *ngSwitchCase="4">
+    <div class="step">
+      <p>Pasul {{ this.step }}</p>
+    </div>
+    <div class="question-text">
+      <p>
+        Îți place să ieși cu prietenii?
+
+      </p>
+      <form>
+        <button
+          type="button"
+          mat-raised-button
+          color="primary"
+          (click)="toggleMap(target)"
+        >
+          Da
+        </button>
+        <button
+          (click)="this.SkipQuestion(question)"
+          type="button"
+          mat-raised-button
+          color="warn"
+        >
+          Nu
+        </button>
+      </form>
+    </div>
+    <div class="illustration">
+      <img src="../../../assets/icons/FRIENDS.png" alt="Friends" />
+    </div>
+  </div>
+  <div class="question-container" *ngSwitchCase="5">
+    <div class="step">
+      <p>Pasul {{ this.step }}</p>
+    </div>
+    <div class="question-text">
+      <p>
+        Îți place să te distrezi?
+
+      </p>
+      <form>
+        <button
+          type="button"
+          mat-raised-button
+          color="primary"
+          (click)="toggleMap(target)"
+        >
+          Da
+        </button>
+        <button
+          (click)="this.SkipQuestion(question)"
+          type="button"
+          mat-raised-button
+          color="warn"
+        >
+          Nu
+        </button>
+      </form>
+    </div>
+    <div class="illustration">
+      <img src="../../../assets/icons/PARTY.png" alt="Party" />
+    </div>
+  </div>
+  <div class="question-container" *ngSwitchCase="6">
+    <div class="step">
+      <p>Pasul {{ this.step }}</p>
+    </div>
+    <div class="question-text">
+      <p>
+        Casa ta perfecta este aproape gata!
+      </p>
+      <form>
+        <div class="form-group">
+          <label> Alege numărul de camere: *</label>
+          <input
+            class="form-control"
+            id="rooms-perfect-home"
+            (change)="getRooms($event.target.value)"
+            type="number"
+            min="1"
+            max="5"
+            formControlName="numberOfRooms"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label> Alege bugetul tău(preț in EURO pe lună): *</label>
+          <input
+            id="price-perfect-home"
+            (change)="getPrice($event.target.value)"
+            class="form-control"
+            type="number"
+            min="100"
+            max="1000"
+            formControlName="price"
+            required
+          />
+        </div>
+      </form>
+    </div>
+    <div class="illustration">
+      <img src="../../../assets/icons/COPII-SCOALA.png" alt="Children" />
+    </div>
+  </div>
+</div>
+<div id="submit-container">
+  <button
+    id="skip"
+    mat-raised-button
+    color="warn"
+    (click)="this.SkipQuestion(question)"
+    *ngIf="this.step !== 6"
+
+  >
+    Sari peste
+  </button>
+  <button
+    *ngIf="this.showMap || this.lastSubmit"
+    id="submit"
+    mat-raised-button
+    color="primary"
+    (click)="this.Respond(question)"
+  >
+    Gata
+  </button>
+</div>
+
+<div class="map-container" [@popOverState]="stateName" #target>
+  <h5 class="guide-text">
+    {{ this.guide }}
+  </h5>
+  <app-map-add-apartment
+    (selectedLocation)="this.PreciseLocation = $event"
+  ></app-map-add-apartment>
+</div>

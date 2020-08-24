@@ -1,0 +1,29 @@
+<mat-nav-list>
+  <a mat-list-item [routerLink]="['/']" [routerLinkActive]="['link-active']" (click)="onSidenavClose()">
+    <mat-icon color="primary">home</mat-icon>
+    <span class="nav-caption">Acasă</span>
+  </a>
+  <a mat-list-item [routerLink]="['/apartments-rent']" [routerLinkActive]="['link-active']" (click)="onSidenavClose()">
+    <mat-icon color="primary">domain icon</mat-icon>
+    <span class="nav-caption">Închirieri</span>
+  </a>
+  <a mat-list-item [routerLink]="['/perfect-home']" [routerLinkActive]="['link-active']" (click)="onSidenavClose()">
+    <mat-icon color="primary">cake icon</mat-icon>
+    <span class="nav-caption">Casa Perfectă</span>
+
+  </a>
+  <a mat-list-item [routerLink]="['/favorite-apartments']" [routerLinkActive]="['link-active']"
+    (click)="onSidenavClose()">
+    <mat-icon color="primary">assignment_ind</mat-icon>
+    <span class="nav-caption">Contul Meu</span>
+  </a>
+  <a mat-list-item [routerLink]="['/my-account']" (click)="logout()" (click)="onSidenavClose()">
+    <mat-icon color="primary">no_encryption</mat-icon>
+    <span class="nav-caption">Log Out</span>
+  </a>
+  <a mat-list-item [routerLink]="['/add-apartment']" [routerLinkActive]="['link-active']" (click)="onSidenavClose()">
+    <mat-icon color="primary">note_add</mat-icon>
+    <span class="nav-caption">Adaugă Anunț</span>
+
+  </a>
+</mat-nav-list>

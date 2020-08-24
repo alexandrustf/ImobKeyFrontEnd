@@ -1,0 +1,24 @@
+.first-image {
+  width: 100%;
+  padding-left: 0;
+  margin-left: 0;
+  position: absolute;
+  padding-top: 0;
+  z-index: -1;
+  height: 864px;
+  height: auto;
+
+  top: 0px;
+  left: 0px;
+  height: 864px;
+  background: transparent linear-gradient(180deg, #010101 0%, #55555500 100%) 0%
+    0% no-repeat padding-box;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.text-marketing {
+  h2 {
+    margin: auto;
+  }
+}

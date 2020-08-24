@@ -1,0 +1,84 @@
+@import "../../../style/main.scss";
+
+.number-of-apartments {
+  padding-top: 32px;
+  text-align: left;
+  font: Medium 24px/32px Roboto;
+  font-family: Roboto;
+  font-size: 24px;
+  letter-spacing: 0px;
+  color: #5d5c62;
+  opacity: 1;
+  margin-left: 134px;
+}
+
+.apartments-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 0px;
+  width: 100%;
+  padding-left: 116px;
+  margin-right: 116px;
+
+  .image-no-result {
+    align-self: center;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-right: 116px;
+    img {
+      align-self: center;
+    }
+
+    .no-results-text {
+      text-align: center;
+      font: Medium 24px/32px Roboto;
+      font-family: Roboto;
+      font-size: 24px;
+      letter-spacing: 0px;
+      color: #5d5c62;
+      opacity: 1;
+      margin: auto;
+    }
+  }
+
+  .apartment-card {
+    width: 389px;
+    height: 438px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 15px 50px #262c3414;
+    opacity: 1;
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-top: 32px;
+    border-radius: 10px;
+    opacity: 1;
+  }
+
+  .apartment-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.pagination-controls-container {
+  text-align: center;
+  padding: 120px 0px 120px 0px;
+}
+@include for-phone-only {
+  .apartments-list-container {
+    padding: 0px 0px 0px 0px;
+    .image-no-result {
+      padding: 20px 0px 0px 0px;
+      img {
+        align-self: center;
+        width: 200px;
+      }
+    }
+
+  }
+}
+app-spinner{
+  margin:auto;
+}

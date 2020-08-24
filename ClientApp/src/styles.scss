@@ -1,0 +1,139 @@
+/* Provide sufficient contrast against white background */
+app-nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.container {
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  width: 100% !important;
+}
+.YourApartment-container {
+  //   position: relative;
+  width: 100%;
+}
+app-nav-menu {
+  //   position: absolute;
+
+  width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.gm-style .gm-style-iw {
+  width: 100%;
+  max-height: 450px;
+  max-width: 420px !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@mixin for-phone-only {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin until-tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tablet-intermediate {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tablet-high {
+  @media (min-width: 992px) and (max-width: 1040px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1041px) and (max-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin until-very-big-desktop {
+  @media (max-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media (max-height: 700px) {
+    @content;
+  }
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+  height: 1233px;
+}
+
+@include for-phone-only {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+}

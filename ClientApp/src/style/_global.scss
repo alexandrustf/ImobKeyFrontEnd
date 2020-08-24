@@ -1,0 +1,21 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::ng-deep {
+  ::-webkit-scrollbar {
+    background-color: #f8f7f7;
+    width: 16px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #6a90ac;
+    border-radius: 16px;
+    border: 5px solid #cccccc;
+  }
+}

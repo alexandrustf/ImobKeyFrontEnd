@@ -1,0 +1,32 @@
+<div class="image-card">
+  <img
+    *ngIf="apartment.imagesBytes"
+    mat-card-image
+    [src]="'data:image/png;base64,' + apartment.imagesBytes"
+    [alt]="apartment.name"
+  />
+</div>
+<div class="card-details">
+  <div class="card-price">
+    {{ apartment.price | currency: "EUR":true }} Euro/lună
+  </div>
+  <div class="card-adress">
+    <div class="location-icon"></div>
+    <div class="location-text">
+      <div class="zone-text">{{ apartment.location }}</div>
+      <div class="location-card" *ngIf="apartment.exactAdress">
+        , {{ apartment.exactAdress }}
+      </div>
+    </div>
+  </div>
+  <div class="apartment-details">
+    <div class="card-number-of-rooms">
+      <div class="number-of-rooms-icon"></div>
+      {{ apartment.numberOfRooms }}
+    </div>
+    <div class="card-area">
+      <div class="icon-area"></div>
+      {{ apartment.area }}
+    </div>
+  </div>
+</div>

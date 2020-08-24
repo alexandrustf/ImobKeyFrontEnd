@@ -1,0 +1,158 @@
+@import "../../../style/main.scss";
+.filter-button-container {
+  margin-bottom: 10px;
+}
+.search-bar-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-self: center;
+  justify-content: center;
+
+  .icon-search-container {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #d6d6d9;
+    opacity: 1;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 7px;
+    .icon-search {
+      margin-left: 7.5px;
+      margin-top: 6.5px;
+      height: 24px;
+      width: 24px;
+      background: transparent url("../../../assets/icons/search-24px.svg") 0% 0%
+        no-repeat padding-box;
+    }
+  }
+
+  .search-box {
+    margin-top: 0px;
+    text-align: left;
+    font: Medium 28px/37px Roboto;
+    letter-spacing: 0;
+    opacity: 1;
+    border: transparent;
+    border-bottom: 1px solid #d6d6d9;
+    input {
+      border: transparent;
+      height: 34px;
+      width: 540px;
+      letter-spacing: 0px;
+      font: Medium 28px/37px Roboto;
+      font-size: 28px;
+      color: #47474b;
+    }
+  }
+}
+.filters-bar-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  .left-filters {
+    display: flex;
+    flex-wrap: wrap;
+    .filter-button {
+      align-items: center;
+
+      option {
+        text-transform: capitalize;
+      }
+      .label-price {
+        padding: 10px 16px 0px 2px;
+      }
+      .input-price {
+        justify-content: center;
+        width: 60px;
+        height: 30px;
+        margin-right: 15px;
+      }
+      .location-icon {
+        margin: 16px 0px 0px 16px;
+
+        height: 40px;
+        width: 30px;
+        background: transparent
+          url("../../../assets/icons/location_on-24px.svg") 0% 0% no-repeat
+          padding-box;
+      }
+      select {
+        font-size: 16px;
+        line-height: 1;
+        border: 0;
+        border-radius: 5px;
+        height: 34px;
+        background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+          no-repeat right #ffffff;
+        -webkit-appearance: none;
+        width: 160px;
+        padding-top: 1.5px;
+      }
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #d6d6d9;
+      border-radius: 25px;
+      text-align: left;
+      font: Medium 17px/23px Roboto;
+      letter-spacing: 0;
+      color: #5d5c62;
+      opacity: 1;
+      margin-right: 24px;
+      height: 40px;
+      display: flex;
+      .filter-text {
+        text-align: left;
+        font: Medium 17px/23px Roboto;
+        letter-spacing: 0;
+        color: #5d5c62;
+        opacity: 1;
+        padding: 6px 16px 0px 2px;
+      }
+
+      .icon-dropdown {
+        background: transparent
+          url("../../../assets/icons/keyboard_arrow_left-24px.svg") 0% 0%
+          no-repeat padding-box;
+        height: 24px;
+        width: 24px;
+        margin: 7px 16px 0px 16px;
+      }
+
+      .number-of-rooms-icon-blue {
+        margin: 7px 0px 0px 16px;
+        height: 30px;
+        width: 30px;
+        background: transparent
+          url("../../../assets/icons/king_bed-blue-24px.svg") 0% 0% no-repeat
+          padding-box;
+      }
+
+      .icon-area-blue {
+        margin: 7px 0px 0px 16px;
+        height: 30px;
+        width: 30px;
+        background: transparent
+          url("../../../assets/icons/square_foot-blue-24px.svg") 0% 0% no-repeat
+          padding-box;
+      }
+
+      .icon-price-blue {
+        margin: 7px 0px 0px 16px;
+        height: 30px;
+        width: 30px;
+        background: transparent
+          url("../../../assets/icons/attach_money-blue-24px.svg") 0% 0%
+          no-repeat padding-box;
+      }
+    }
+  }
+}
+@include for-phone-only {
+  .filter-button-container {
+    margin-bottom: 10px;
+  }
+
+  #search-apartment {
+    width: 180px;
+  }
+}

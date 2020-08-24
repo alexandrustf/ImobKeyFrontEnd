@@ -1,0 +1,58 @@
+<div class="search-bar-container">
+  <div class="icon-search-container">
+    <div class="icon-search"></div>
+  </div>
+  <div class="search-box">
+    <label for="search-apartment"></label>
+    <input #box (keyup.enter)="update(box.value)" (blur)="update(box.value)" type="text" id="search-apartment"
+      name="search-apartment" />
+  </div>
+</div>
+<div class="filters-bar-container">
+  <div class="left-filters">
+    <!-- <div class="filter-button filter-button-container">
+      <div class="number-of-rooms-icon-blue"></div>
+      <select class="filter-button">
+        <option selected value="rent">Rent</option>
+        <option value="buy">Buy</option>
+      </select>
+    </div> -->
+    <div class="filter-button filter-button-container">
+      <div class="number-of-rooms-icon-blue"></div>
+      <select (change)="filterByRooms($event.target.value)" class="filter-button">
+        <option selected value="">Numărul de camere</option>
+        <option value="1">1 Room</option>
+        <option value="2">2 Rooms</option>
+        <option value="3">3 Rooms</option>
+        <option value="4">4 Rooms</option>
+        <option value="5">5 or more Rooms</option>
+      </select>
+    </div>
+    <div class="filter-button filter-button-container">
+      <div class="icon-area-blue"></div>
+      <label for="min-price" class="label-price" style="font-size: 12px;">Arie minima:</label>
+      <input type="number" name="min-price" min="0" class="input-price"
+        (change)="filterByMinArea($event.target.value)" />
+      <label for="max-price" class="label-price" style="font-size: 12px;">Area maxima:</label>
+      <input type="number" name="max-price" min="0" class="input-price"
+        (change)="filterByMaxArea($event.target.value)" />
+    </div>
+    <div class="filter-button filter-button-container">
+      <div class="icon-price-blue"></div>
+      <label for="min-price" class="label-price" style="font-size: 12px;">Preț minim:</label>
+      <input type="number" name="min-price" min="0" class="input-price"
+        (change)="filterByMinPrice($event.target.value)" />
+      <label for="max-price" class="label-price" style="font-size: 12px;">Preț maxim:</label>
+      <input type="number" name="max-price" min="0" class="input-price"
+        (change)="filterByMaxPrice($event.target.value)" />
+    </div>
+    <div class="filter-button filter-button-container">
+      <div class="location-icon"></div>
+      <select aria-placeholder="Zone" class="filter-button" (change)="filterByLocation($event.target.value)">
+        <option value="" selected>Zone</option>
+        <option *ngFor="let location of locations" value="{{ location.id }}">
+          {{ location.name }}</option>
+      </select>
+    </div>
+  </div>
+</div>

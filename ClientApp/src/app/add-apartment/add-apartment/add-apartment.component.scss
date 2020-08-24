@@ -1,0 +1,25 @@
+@import "../../../style/main.scss";
+
+.add-apartment-container {
+  padding-top: 115px;
+  padding-left: 134px;
+  padding-right: 134px;
+  padding-bottom: 115px;
+
+  .form-container {
+    max-width: 1000px;
+    margin: auto;
+
+    .card-header {
+      margin: auto;
+      text-align: center;
+      color: #476377;
+    }
+  }
+}
+
+@include for-phone-only {
+  .add-apartment-container {
+    padding: 0px 0px 0px 0px;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="perfect-home-container">
+  <h4 class="sub-title" *ngIf="!this.responded">
+    Următorii pași te vor aduce mai aproape de casa perfectă pentru tine
+  </h4>
+  <app-perfect-home-question
+    *ngIf="!this.responded"
+    (locationResponse)="this.addLocationResponse($event)"
+    (responded)="this.GetPerfectHome($event)"
+  ></app-perfect-home-question>
+  <h4 *ngIf="this.responded" class="sub-title">
+    Casa perfectă pentru tine este:
+  </h4>
+  <app-spinner *ngIf="this.responded && this.loading"></app-spinner>
+  <div class="cards-container">
+    <div class="apartment-card" *ngFor="let apartment of apartmentsList">
+      <app-apartment-card
+        [apartment]="apartment"
+        [routerLink]="['../apartments-rent/detail/' + apartment.id]"
+      >
+      </app-apartment-card>
+
+    </div>
+  </div>
+  <h5 *ngIf="apartmentsList && apartmentsList.length === 0">
+    Se pare ca nu există niciun apartament conform cerințelor tale. Te rugăm sa
+    încerci din nou cu un buget mai mare.
+  </h5>
+</div>

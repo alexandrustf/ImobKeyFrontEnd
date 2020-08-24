@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "yourapartmenthost": {
+      "hosting": {
+        "YourApartment.WebClient": [
+          "yourapartmenthost"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../../style/main.scss";
+
+.auth-container {
+  padding: 150px 134px 100px 134px;
+}
+
+@include for-phone-only {
+  .auth-container {
+    padding: 0px 0px 0px 0px;
+  }
+}

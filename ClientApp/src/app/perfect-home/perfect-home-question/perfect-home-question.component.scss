@@ -1,0 +1,74 @@
+@import "../../../style/main.scss";
+
+.question-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: auto;
+  .step {
+    background: #e5e5e5 0% 0% no-repeat padding-box;
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    p {
+      padding: 22px 65px 22px 65px;
+      display: flex;
+      align-items: center;
+      margin: auto;
+      color: #567a94;
+      text-align: center;
+      letter-spacing: 0px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  .question-text {
+    // flex: 0.25;
+    p {
+      font-size: 1.5rem;
+
+    }
+  }
+
+  .illustration {
+    flex: 0.2;
+    background: transparent 0% 0% no-repeat padding-box;
+
+    img {
+      width: 259px;
+      height: 259px;
+    }
+  }
+}
+h5 {
+  display: flex;
+  justify-content: center;
+}
+
+#submit-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+#submit {
+}
+.map-container {
+  width: 100%;
+
+  .guide-text {
+    padding: 15px 0px 15px 0px;
+  }
+}
+@include for-phone-only {
+  .question-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+button {
+  margin: 10px 10px 10px 10px;
+}
+

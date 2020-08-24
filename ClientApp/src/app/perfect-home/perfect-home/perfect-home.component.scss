@@ -1,0 +1,61 @@
+@import "../../../style/main.scss";
+
+.perfect-home-container {
+  padding: 75px 134px 134px 134px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  app-perfect-home-question {
+    width: 100%;
+    // background-color: #f8f7f7;
+  }
+  .sub-title {
+    align-self: center;
+    margin: auto;
+    padding: 30px 30px 30px 30px;
+    color: #547a95;
+  }
+
+  .apartment-card {
+    width: 389px;
+    height: 438px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 15px 50px #262c3414;
+    opacity: 1;
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-top: 32px;
+    border-radius: 15px;
+    opacity: 1;
+  }
+
+  .apartment-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .map-container {
+    width: 100%;
+  }
+}
+@include for-phone-only {
+  .perfect-home-container {
+    padding: 0px 0px 0px 0px;
+
+    .apartment-card {
+      width: 100%;
+    }
+
+  }
+}
+h5 {
+  color: #547a95;
+  margin: auto;
+}

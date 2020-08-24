@@ -1,0 +1,120 @@
+.image-card {
+  img {
+    width: 100%;
+    height: 264px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
+.card-details {
+  align-items: flex-start;
+  margin: 24px 24px 24px 24px;
+  .card-price {
+    font: Medium 20px/26px Roboto;
+    font-size: 20px;
+    font-family: Roboto;
+    letter-spacing: 0;
+    color: #557a95;
+    opacity: 1;
+    font-weight: 700;
+  }
+  .card-adress {
+    text-align: left;
+    font: Regular 17px/23px Roboto;
+    letter-spacing: 0;
+    color: #5d5c62;
+    padding-top: 10px;
+    height: 70px;
+    display: flex;
+    .location-icon {
+      height: 40px;
+      width: 30px;
+      background: transparent url("../../../assets/icons/location_on-24px.svg")
+        0% 0% no-repeat padding-box;
+    }
+    .zone-text {
+      white-space: nowrap;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    .location-text {
+      display: flex;
+    }
+  }
+  .favorite-container {
+    align-self: flex-end;
+    [id="heart"] {
+      position: absolute;
+      left: -100vw;
+    }
+
+    [for="heart"] {
+      color: #aab8c2;
+      cursor: pointer;
+      font-size: 3em;
+      align-self: center;
+      transition: color 0.2s ease-in-out;
+    }
+
+    [for="heart"]:hover {
+      color: grey;
+    }
+
+    [for="heart"]::selection {
+      color: none;
+      background: transparent;
+    }
+
+    [for="heart"]::moz-selection {
+      color: none;
+      background: transparent;
+    }
+
+    [id="heart"]:checked + label {
+      color: #e22626;
+      will-change: font-size;
+      animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+    }
+
+    @keyframes heart {
+      0%,
+      17.5% {
+        font-size: 0;
+      }
+    }
+  }
+  .apartment-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-self: flex-end;
+    justify-content: flex-start;
+
+    .card-number-of-rooms {
+      padding-right: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      .number-of-rooms-icon {
+        height: 30px;
+        width: 30px;
+        background: transparent url("../../../assets/icons/king_bed-24px.svg")
+          0% 0% no-repeat padding-box;
+      }
+    }
+    .card-area {
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      .icon-area {
+        height: 30px;
+        width: 30px;
+        background: transparent
+          url("../../../assets/icons/square_foot-24px.svg") 0% 0% no-repeat
+          padding-box;
+      }
+    }
+  }
+}

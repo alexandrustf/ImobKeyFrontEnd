@@ -1,0 +1,31 @@
+<agm-map
+  (mapClick)="close_window($event)"
+  [fullscreenControl]="true"
+  *ngIf="apartmentsList"
+  [latitude]="47.161494"
+  [longitude]="27.5840504"
+  [zoom]="12"
+>
+  <div *ngFor="let apartment of apartmentsList">
+    <agm-marker
+      (markerClick)="select_marker(infoWindow)"
+      [latitude]="apartment.latitude"
+      [longitude]="apartment.longitude"
+      [title]="apartment.name"
+    >
+      <agm-info-window
+        #infoWindow
+        class="agm-info-window-content"
+        [disableAutoPan]="false"
+      >
+        <app-apartment-card [apartment]="apartment"></app-apartment-card>
+        <button
+          class="details-button"
+          [routerLink]="['./detail/' + apartment.id]"
+        >
+          Vezi Detalii
+        </button>
+      </agm-info-window>
+    </agm-marker>
+  </div>
+</agm-map>
