@@ -17,7 +17,7 @@ export class AddApartmentService {
     console.log("din serviciu");
     console.log(createApartment);
     return this.http.post<ServiceResponse>(
-      `https://xinrbkooui.execute-api.eu-central-1.amazonaws.com/alpha/apartments`,
+      `${environment.YourApartmentUrl}/apartments`,
       createApartment
     );
   }

@@ -13,7 +13,7 @@ export class LocationService {
 
   public getZoneLocations(): Observable<LocationModel[]> {
     return this.http
-      .get<LocationModel[]>(`${environment.YourApartmentUrl}/Locations`)
+      .get<LocationModel[]>(`${environment.LocationsUrl}/Locations`)
       .pipe(
         map((locations) =>
           locations.map((l) => Object.assign(new LocationModel(), l))

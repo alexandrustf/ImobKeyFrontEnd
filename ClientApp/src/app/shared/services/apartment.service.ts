@@ -17,7 +17,7 @@ export class ApartmentService {
 
   public getApartmentById(id: string): Observable<ApartmentDetails> {
     return this.http.get<ApartmentDetails>(
-      `${environment.YourApartmentUrl}/Apartments/${id}`
+      `${environment.YourApartmentUrl}/apartments/${id}`
     );
   }
 
@@ -65,7 +65,7 @@ export class ApartmentService {
       : params;
 
     return this.http
-      .get<PageModel<Apartment>>(`https://xinrbkooui.execute-api.eu-central-1.amazonaws.com/alpha/apartments`, {
+      .get<PageModel<Apartment>>(`${environment.YourApartmentUrl}/apartments`, {
         params: params,
       })
       .pipe(
