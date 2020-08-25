@@ -9,8 +9,8 @@
   <div *ngFor="let apartment of apartmentsList">
     <agm-marker
       (markerClick)="select_marker(infoWindow)"
-      [latitude]="apartment.latitude"
-      [longitude]="apartment.longitude"
+      [latitude]="apartment.lat"
+      [longitude]="apartment.lng"
       [title]="apartment.name"
     >
       <agm-info-window

@@ -190,7 +190,10 @@ export class AddApartmentFormComponent implements OnInit {
     apartment.lat = this.PreciseLocation.lat;
     apartment.lng = this.PreciseLocation.lng;
     apartment.price = this.apartmentForm.get("price").value;
-    apartment.imagesBytes = this.imageContent;
+
+    apartment.imagesBytes = [];
+    apartment.imagesBytes.push(this.imageContent);
+    
     console.log(apartment);
     this.added = true;
     this.loading = false;

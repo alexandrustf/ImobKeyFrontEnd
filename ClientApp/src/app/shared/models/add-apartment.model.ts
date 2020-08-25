@@ -16,5 +16,5 @@ export class CreateApartmentModel {
   // public partitioningType: string;
   // public postedBy: string;
   // public building: string;
-  public imagesBytes: string;
+  public imagesBytes: string[];
 }
