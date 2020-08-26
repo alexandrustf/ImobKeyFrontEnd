@@ -7,7 +7,7 @@ export const environment = {
   // YourApartmentUrl: "https://localhost:44366/api/v1",
   YourApartmentUrl:
     "https://7zjkc0nbtk.execute-api.eu-central-1.amazonaws.com/development",
-  LocationsUrl: "http://localhost:8080/api/v1",
+  LocationsUrl: "https://7zjkc0nbtk.execute-api.eu-central-1.amazonaws.com/development",
 
   ApartmentMLUrl: "https://deployapartment.nw.r.appspot.com",
 

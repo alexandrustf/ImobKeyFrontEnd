@@ -77,7 +77,7 @@ export class AddApartmentFormComponent implements OnInit {
       validators: [Validators.min(1920), Validators.max(2020)],
       updateOn: "change",
     }),
-    phone: new FormControl("", {
+    phoneOwner: new FormControl("", {
       validators: [],
       updateOn: "change",
     }),
@@ -121,9 +121,10 @@ export class AddApartmentFormComponent implements OnInit {
 
   selectChangeHandler(event: any) {
     this.selectedLocation = event.target.value;
-    console.log(
-      this.locations.filter((p) => p.id == this.selectedLocation)[0].name
-    );
+    // console.log(
+    //   this.locations.filter((p) => p.id == this.selectedLocation)[0].name
+    // );
+    console.log(this.selectedLocation)
   }
 
   public idealPrice: number;
@@ -157,6 +158,7 @@ export class AddApartmentFormComponent implements OnInit {
     // console.warn(this.apartmentForm.value);
     // window.alert("A fost apasat butonu de submit" + this.apartmentForm.value);
     var apartment = new CreateApartmentModel();
+    apartment.phoneOwner = this.apartmentForm.get("phoneOwner").value;
     apartment.title = this.apartmentForm.get("title").value;
     apartment.area = this.apartmentForm.get("area").value;
     apartment.numberOfRooms = this.apartmentForm.get("numberOfRooms").value;
@@ -189,9 +191,9 @@ export class AddApartmentFormComponent implements OnInit {
         ).value)
       : 0;
 
-    apartment.locationId = this.selectedLocation;
+    apartment.location = this.selectedLocation;
     console.log("aici");
-    console.log(apartment.locationId);
+    console.log(apartment.location);
     apartment.lat = this.PreciseLocation.lat;
     apartment.lng = this.PreciseLocation.lng;
     apartment.price = this.apartmentForm.get("price").value;

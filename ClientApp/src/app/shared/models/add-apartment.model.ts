@@ -6,7 +6,7 @@ export class CreateApartmentModel {
   public floor: number;
   public totalNumberOfFloors: number;
   public numberOfBathrooms: number;
-  public locationId: string;
+  public location: string;
   public exactAdress: string;
   public description: string;
   public confort: number;
@@ -16,5 +16,6 @@ export class CreateApartmentModel {
   // public partitioningType: string;
   // public postedBy: string;
   // public building: string;
+  public phoneOwner: string;
   public imagesBytes: string[];
 }

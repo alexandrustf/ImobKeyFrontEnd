@@ -27,7 +27,7 @@
             <option value="" selected>Zone</option>
             <option
               *ngFor="let location of locations"
-              value="{{ location.id }}"
+              value="{{ location.name }}"
             >
               {{ location.name }}</option
             >
@@ -157,7 +157,7 @@
           <input
             class="form-control"
             type="tel"
-            formControlName="phone"
+            formControlName="phoneOwner"
             required
           />
         </div>
