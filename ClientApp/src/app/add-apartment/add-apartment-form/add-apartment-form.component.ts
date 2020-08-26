@@ -103,15 +103,20 @@ export class AddApartmentFormComponent implements OnInit {
       .subscribe((res) => (this.locations = res));
   }
 
-  imageContent: string;
+  imagesContent: string[] = [];
 
   onFileChanged(event) {
-    const reader = new FileReader();
-    reader.readAsDataURL(event.target.files[0]);
-    reader.onload = (event) => {
-      var imageResult = event.target["result"].toString();
-      this.imageContent = imageResult.slice(23, imageResult.length - 4);
-    };
+    event.target.files.length
+    for(let index = 0 ; index < event.target.files.length; index++){
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[index]);
+      reader.onload = (event) => {
+        var imageResult = event.target["result"].toString();
+        this.imagesContent.push(imageResult.slice(23, imageResult.length - 4));
+      };
+    }
+    
+    console.log(this.imagesContent)
   }
 
   selectChangeHandler(event: any) {
@@ -191,8 +196,9 @@ export class AddApartmentFormComponent implements OnInit {
     apartment.lng = this.PreciseLocation.lng;
     apartment.price = this.apartmentForm.get("price").value;
 
-    apartment.imagesBytes = [];
-    apartment.imagesBytes.push(this.imageContent);
+    apartment.imagesBytes = this.imagesContent;
+    // console.log('imagescontect', this.imagesContent);
+    // console.log(apartment.imagesBytes)
     
     console.log(apartment);
     this.added = true;
