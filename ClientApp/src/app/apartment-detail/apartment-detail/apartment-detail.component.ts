@@ -32,6 +32,7 @@ export class ApartmentDetailComponent implements OnInit {
       .subscribe((res) => {
         this.apartment = res;
         this.loading = false;
+        console.log(this.apartment);
       });
   }
   dosth(event) {

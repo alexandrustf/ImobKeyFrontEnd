@@ -16,5 +16,5 @@ export class ApartmentDetails {
   public postedBy: string;
   public building: string;
   public addedAt: string;
-  public images: [];
+  public imagesBytes: string[];
 }
