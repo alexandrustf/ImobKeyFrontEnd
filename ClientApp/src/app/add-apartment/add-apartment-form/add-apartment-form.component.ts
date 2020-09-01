@@ -24,6 +24,8 @@ export class AddApartmentFormComponent implements OnInit {
   public selectedLocation: string;
   public added: boolean;
   public loading: boolean;
+  public imagesContent: string[] = [];
+
   public apartmentForm: FormGroup = new FormGroup({
     image: new FormControl("", {
       validators: [Validators.required],
@@ -103,9 +105,9 @@ export class AddApartmentFormComponent implements OnInit {
       .subscribe((res) => (this.locations = res));
   }
 
-  imagesContent: string[] = [];
 
   onFileChanged(event) {
+    this.imagesContent = [];
     event.target.files.length
     for(let index = 0 ; index < event.target.files.length; index++){
       const reader = new FileReader();

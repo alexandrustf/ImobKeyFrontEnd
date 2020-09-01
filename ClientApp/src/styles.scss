@@ -54,6 +54,66 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.container-logo-loading{
+  width: 100%;
+
+  .logo-loading{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 150px;
+    animation: pulse_animation 2s infinite;
+  }
+
+  @keyframes pulse_animation {
+    0% { -webkit-transform: scale(0.5);
+      animation-timing-function: linear; 
+      }
+    5% { -webkit-transform: scale(0.55);
+      animation-timing-function: linear; 
+    }
+    10% { -webkit-transform: scale(0.6);
+      animation-timing-function: linear; 
+    }
+    15% { -webkit-transform: scale(0.65);
+      animation-timing-function: linear; 
+    }
+    20% { -webkit-transform: scale(0.7);
+      animation-timing-function: linear; 
+    }
+    25% { -webkit-transform: scale(0.75);
+      animation-timing-function: linear; 
+    }
+    30% { -webkit-transform: scale(0.8);
+      animation-timing-function: linear; 
+    }
+    40% { -webkit-transform: scale(0.85);
+      animation-timing-function: linear; 
+    }
+    50% { -webkit-transform: scale(0.9);
+      animation-timing-function: linear; 
+    }
+    60% { -webkit-transform: scale(1);
+      animation-timing-function: linear; 
+    }
+    70% { -webkit-transform: scale(1.1);
+      animation-timing-function: linear; 
+    }
+    80% { -webkit-transform: scale(1);
+      animation-timing-function: linear; 
+    }
+    100% { -webkit-transform: scale(0.75);
+      animation-timing-function: linear; 
+    }
+}
+}
+
+
+
+
+
+
 @mixin for-phone-only {
   @media (max-width: 767px) {
     @content;
