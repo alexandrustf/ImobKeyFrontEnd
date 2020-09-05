@@ -11,7 +11,7 @@
   .apartment-subcontainer {
     padding: 100px 100px 100px 100px;
     background-color: #f5f5f5;
-    border-radius: 10%;
+    border-radius: 10px;
     border: solid #557a95 3px;
     color: #21435c;
     text-transform: capitalize;
@@ -22,7 +22,9 @@
       text-align: center;
     }
     img {
-      width: 800px;
+      width: 1000px;
+      display:block;
+      margin:auto;
     }
   }
   .favorite-container {
