@@ -1,3 +1,11 @@
+@import "../../style/main.scss";
+
+#logo {
+  max-width: 10em;
+  padding-top: 30px;
+  margin: auto;
+}
+
 .first-image {
   width: 100%;
   padding-left: 0;
@@ -7,6 +15,7 @@
   z-index: -1;
   height: 864px;
   height: auto;
+  margin-top: 180px;
 
   top: 0px;
   left: 0px;
@@ -18,7 +27,32 @@
 }
 
 .text-marketing {
-  h2 {
+  // margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 620px;
+
+  h2,h4,h3 {
     margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+    padding-top: 1em;
+  }
+
+  span{
+    text-transform: capitalize;
+    color: #536890;
+  }
+}
+
+@include for-phone-only {
+  .first-image {
+    margin-top: 426px;
+  }
+
+  .text-marketing {
+    margin-bottom: 580px;
   }
 }

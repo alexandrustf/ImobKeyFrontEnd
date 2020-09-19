@@ -1,5 +1,6 @@
 @import "../../../style/main.scss";
 
+
 .apartments-rent-page-container {
   .apartments-search-container {
     opacity: 1;
@@ -24,7 +25,7 @@
 
     .see-map-toggle {
       align-self: flex-end;
-      margin-top: -68px;
+      margin-top: -68px; 
 
       .switch {
         position: relative;
@@ -116,7 +117,7 @@
 
       .see-map-toggle {
         align-self: flex-end;
-        margin-top: -68px;
+        margin-top: -10px; //TO BE PUT -68px; 
 
         .switch {
           position: relative;

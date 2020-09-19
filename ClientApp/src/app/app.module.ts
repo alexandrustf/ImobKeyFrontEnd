@@ -30,9 +30,10 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatListModule } from '@angular/material/list';
 import { NavListComponent } from "./nav-list/nav-list.component";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, NavMenuComponent, HomeComponent, NavListComponent],
+  declarations: [AppComponent, NavMenuComponent, HomeComponent, NavListComponent, FooterComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
     HttpClientModule,

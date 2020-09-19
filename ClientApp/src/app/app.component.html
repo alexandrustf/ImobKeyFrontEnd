@@ -4,8 +4,9 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <app-nav-menu (sidenavToggle)="sidenav.toggle()"></app-nav-menu>
-    <main>
+    <main style="display: flex; flex-direction: column;">
       <router-outlet></router-outlet>
+      <app-footer></app-footer>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
