@@ -1,3 +1,5 @@
+@import "../../style/main.scss";
+
 .footer-container {
     display: flex;
     justify-content: space-evenly;
@@ -11,3 +13,14 @@
     padding-top: 10px;
 } 
 
+@include for-phone-only {
+    footer{
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .footer-column {
+        padding-top: 15px;
+    }
+}
