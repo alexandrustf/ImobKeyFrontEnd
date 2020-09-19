@@ -11,8 +11,8 @@ import { LocationService } from "src/app/shared/services/location.service";
 import { LocationModel } from "src/app/shared/models/location.model";
 import { LocationCoordinates } from "../map-add-apartment/location-coordinates.model";
 
-export const NAME_MAX_LENGTH: number = 50;
-export const DESCRIPTION_MAX_LENGTH: number = 1000;
+export const NAME_MAX_LENGTH: number = 80;
+export const DESCRIPTION_MAX_LENGTH: number = 1500;
 @Component({
   selector: "app-add-apartment-form",
   templateUrl: "./add-apartment-form.component.html",
