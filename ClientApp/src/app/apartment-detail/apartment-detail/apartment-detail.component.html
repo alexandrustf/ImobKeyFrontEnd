@@ -13,7 +13,7 @@
         [alt]="apartment.name"
       />
     </div>
-    <div class="favorite-container">
+    <!-- <div class="favorite-container">
       <h3>Adaugă produsul la favorite in contul tău:</h3>
       <input
         id="heart"
@@ -22,57 +22,53 @@
         (change)="changeStatus(this.status)"
       />
       <label for="heart">❤</label>
-    </div>
-    <div class="description-container">
-      <h2>Descriere:</h2>
-      <div class="description-text">
-        <h4>{{ apartment.description }}</h4>
-      </div>
-    </div>
+    </div> -->
 
+    <div class="description-container padding-on">
+      <h2>Pret: <span>{{ apartment.price | currency: "EUR":true:'2.0' }} Euro/lună</span></h2>
+    </div>
     <div class="spefications-container">
       <h2>Specificații:</h2>
       <div class="spefication-container">
-        <h4 class="spefication-title">Locație:</h4>
-        <h4 class="spefication-value">{{ apartment.location }}</h4>
+        <h4 class="spefication-title">Locație: </h4>
+        <h4 class="spefication-value" style="text-transform: capitalize;">{{ apartment.location }}</h4>
       </div>
 
       <div class="spefication-container">
-        <h4 class="spefication-title">Preț:</h4>
+        <h4 class="spefication-title">Preț: </h4>
         <h4 class="spefication-value">{{ apartment.price }}</h4>
       </div>
       <div class="spefication-container">
-        <h4 class="spefication-title">Numărul de camere:</h4>
+        <h4 class="spefication-title">Numărul de camere: </h4>
         <h4 class="spefication-value">{{ apartment.numberOfRooms }}</h4>
       </div>
       <div class="spefication-container">
-        <h4 class="spefication-title">Aria:</h4>
+        <h4 class="spefication-title">Aria: </h4>
         <h4 class="spefication-value">{{ apartment.area }}</h4>
       </div>
       <div *ngIf="apartment.exactAdress" class="spefication-container">
-        <h4 class="spefication-title">Adresa:</h4>
+        <h4 class="spefication-title">Adresa: </h4>
         <h4 class="spefication-value">{{ apartment.exactAdress }}</h4>
       </div>
       <div *ngIf="apartment.floor" class="spefication-container">
-        <h4 class="spefication-title">Etajul:</h4>
+        <h4 class="spefication-title">Etajul: </h4>
         <h4 class="spefication-value">{{ apartment.floor }}</h4>
       </div>
       <div *ngIf="apartment.totalNumberOfFloors" class="spefication-container">
-        <h4 class="spefication-title">
-          Numărul total de etaje al clădirii:
+        <h4 class="spefication-title">Numărul total de etaje al clădirii: 
         </h4>
-        <h4 class="spefication-value">{{ apartment.totalNumberOfFloors }}</h4>
+        <h4 class="spefication-value"> {{ apartment.totalNumberOfFloors }}</h4>
       </div>
       <div *ngIf="apartment.confort" class="spefication-container">
-        <h4 class="spefication-title">Nivelul de confort:</h4>
+        <h4 class="spefication-title">Nivelul de confort: </h4>
         <h4 class="spefication-value">{{ apartment.confort }}</h4>
       </div>
       <div *ngIf="apartment.constructionYear" class="spefication-container">
-        <h4 class="spefication-title">Anul Construcției:</h4>
+        <h4 class="spefication-title">Anul Construcției: </h4>
         <h4 class="spefication-value">{{ apartment.constructionYear }}</h4>
       </div>
       <div *ngIf="apartment.numberOfBathrooms" class="spefication-container">
-        <h4 class="spefication-title">Numărul de băi:</h4>
+        <h4 class="spefication-title">Numărul de băi: </h4>
         <h4 class="spefication-value">{{ apartment.numberOfBathrooms }}</h4>
       </div>
       <div
@@ -82,7 +78,7 @@
         "
         class="spefication-container"
       >
-        <h4 class="spefication-title">Compartimentare:</h4>
+        <h4 class="spefication-title">Compartimentare: </h4>
         <h4 class="spefication-value">{{ apartment.partitioningType }}</h4>
       </div>
       <div
@@ -93,8 +89,33 @@
         <h4 class="spefication-value">{{ apartment.building }}</h4>
       </div>
     </div>
-    <div class="contact">
+    <div class="description-container">
+      <h2>Descriere:</h2>
+      <div class="description-text">
+        <h4>{{ apartment.description }}</h4>
+      </div>
+    </div>
+
+   
+    <div class="description-container padding-on">
+      <h2>Contact:</h2>
       <h4>Contactează un agent: <span>0757 683 208 </span></h4>
+    </div>
+    <div class="map-detail">
+      <agm-map
+        (mapClick)="close_window($event)"
+        *ngIf="apartment"
+        [latitude]="apartment.lat"
+        [longitude]="apartment.lng"
+        [zoom]="14"
+      >
+          <agm-marker
+            [latitude]="apartment.lat"
+            [longitude]="apartment.lng"
+            [title]="apartment.name"
+          >
+          </agm-marker>
+        </agm-map>
     </div>
   </div>
 </div>

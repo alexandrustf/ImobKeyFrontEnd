@@ -10,5 +10,6 @@ export class Apartment {
   public exactAdress: string;
   public lat: number;
   public lng: number;
+  public imagesBytes: any;
   public images: [];
 }
