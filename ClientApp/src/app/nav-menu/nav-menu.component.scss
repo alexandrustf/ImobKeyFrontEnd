@@ -91,6 +91,11 @@
   padding-top: 30px;
   margin: auto;
 }
+
+mat-toolbar {
+  height: 100px;
+}
+
 @include for-big-desktop-up {
   .header-container {
     top: 0px;
