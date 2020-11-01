@@ -8,12 +8,18 @@ import { PageModel } from "../models/page.model";
 import { FilterModel } from "../models/filter.model";
 import { ConditionalExpr } from "@angular/compiler";
 import { ApartmentDetails } from "../models/apartment-details.model";
+import { ServiceResponse } from "../models/service-reponse.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class ApartmentService {
   public constructor(private http: HttpClient) { }
+
+  public publishApartment(id: string): Observable<ServiceResponse> {
+    console.log("din serviciu publishing " + id);
+    return this.http.post<ServiceResponse>(`${environment.YourApartmentUrl}/apartments/${id}/publisholx`,{});
+  }
 
   public getApartmentById(id: string): Observable<ApartmentDetails> {
     return this.http.get<ApartmentDetails>(

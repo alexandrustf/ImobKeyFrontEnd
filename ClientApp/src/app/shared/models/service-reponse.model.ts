@@ -1,6 +1,4 @@
-export class ServiceResponse<T = {}> {
-  public isSuccess: boolean;
-  public isFailure: boolean;
-  public error: string;
-  public value?: T;
+export class ServiceResponse {
+  public success: boolean;
+  public message: string;
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ApartmentService } from "src/app/shared/services/apartment.service";
 import { ActivatedRoute } from "@angular/router";
 import { Subscription } from "rxjs";
-import { first } from "rxjs/operators";
+import { first, window } from "rxjs/operators";
 import { ApartmentDetails } from "src/app/shared/models/apartment-details.model";
 import { FavoriteService } from "src/app/shared/services/favorite.service";
 import { Favorite } from "src/app/shared/models/favorite.model";
@@ -16,6 +16,7 @@ export class ApartmentDetailComponent implements OnInit {
   public apartment: ApartmentDetails;
   public status: boolean;
   public loading: boolean;
+  public message: String;
   constructor(
     private route: ActivatedRoute,
     private apartmentsService: ApartmentService,
@@ -53,6 +54,22 @@ export class ApartmentDetailComponent implements OnInit {
       this.favoriteService.addFavorite(favorite).subscribe();
     } else {
       console.log("aici dam call ca sa scoatem de la favorite");
+    }
+  }
+
+  publishOlx() {
+    if(confirm(`Chiar vrei sa postezti anuntul ${this.apartment.id}?`)) {
+      console.log('Publishing to OLX with id: ' + this.apartment.id);
+      this.status = false;
+      this.loading = true;
+      const id: string = this.route.snapshot.paramMap.get("id");
+      this.apartmentsService
+        .publishApartment(id)
+        .pipe(first())
+        .subscribe((res) => {
+          console.log(res);
+          this.loading = false;
+        });
     }
   }
 }
