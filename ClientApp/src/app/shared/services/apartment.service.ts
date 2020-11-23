@@ -18,7 +18,7 @@ export class ApartmentService {
 
   public publishApartment(id: string): Observable<ServiceResponse> {
     console.log("din serviciu publishing " + id);
-    return this.http.post<ServiceResponse>(`${environment.YourApartmentUrl}/apartments/${id}/publisholx`,{});
+    return this.http.post<ServiceResponse>(`${environment.YourApartmentUrl}/apartments/${id}/publishOlxStep`,{});
   }
 
   public getApartmentById(id: string): Observable<ApartmentDetails> {
