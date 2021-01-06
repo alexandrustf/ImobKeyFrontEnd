@@ -16,6 +16,7 @@ export class ApartmentDetailComponent implements OnInit {
   public apartment: ApartmentDetails;
   public status: boolean;
   public loading: boolean;
+  public srcImages;
   constructor(
     private route: ActivatedRoute,
     private apartmentsService: ApartmentService,
@@ -30,9 +31,10 @@ export class ApartmentDetailComponent implements OnInit {
       .getApartmentById(id)
       .pipe(first())
       .subscribe((res) => {
-        this.apartment = res;
+        this.apartment = res.data;
         this.loading = false;
         console.log(this.apartment);
+        this.srcImages = JSON.parse(this.apartment.pathImages);
       });
   }
   dosth(event) {

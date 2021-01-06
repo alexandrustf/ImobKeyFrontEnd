@@ -11,5 +11,6 @@ export class Apartment {
   public lat: number;
   public lng: number;
   public imagesBytes: any;
+  public pathImages: string;
   public images: [];
 }

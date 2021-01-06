@@ -8,7 +8,12 @@ import { Apartment } from "src/app/shared/models/apartment.model";
 })
 export class ApartmentCardComponent implements OnInit {
   @Input() apartment: Apartment;
-  constructor() {}
+  srcImage: string;
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.apartment.pathImages)
+    this.srcImage = JSON.parse(this.apartment.pathImages)[0];
+  }
 }

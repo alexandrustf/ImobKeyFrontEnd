@@ -6,10 +6,10 @@
       <h1>{{ apartment.title }}</h1>
     </div>
 
-    <div class="images-container" *ngFor="let image of apartment.imagesBytes">
-      <img
+    <div class="images-container" *ngFor="let image of this.srcImages">
+        <img
         mat-card-image
-        [src]="'data:image/png;base64,' + image"
+        [src]="image"
         [alt]="apartment.name"
       />
     </div>
