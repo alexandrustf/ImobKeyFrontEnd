@@ -71,8 +71,9 @@ export class ApartmentService {
       .pipe(
         map((res) => {
           const pageModel: PageModel<Apartment> = new PageModel<Apartment>();
+          console.log(res);
           pageModel.totalNumberOfRecords = res.totalNumberOfRecords;
-          pageModel.records = res.records.map((s) =>
+          pageModel.records = res.data.map((s) =>
             Object.assign(new Apartment(), s)
           );
           return pageModel;

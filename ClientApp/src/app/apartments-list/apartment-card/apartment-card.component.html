@@ -1,8 +1,7 @@
 <div class="image-card">
   <img
-    *ngIf="apartment.imagesBytes"
     mat-card-image
-    [src]="'data:image/png;base64,' + apartment.imagesBytes"
+    src="https:dev-bucket-images-apartments-aurora.s3.eu-central-1.amazonaws.com/undefined-0-apartment-image.jpg"
     [alt]="apartment.name"
   />
 </div>
