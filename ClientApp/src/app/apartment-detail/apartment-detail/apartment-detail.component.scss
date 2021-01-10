@@ -95,6 +95,10 @@
   }
 }
 
+.title-container {
+  margin-top: 10px;
+}
+
 .padding-on {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -202,4 +206,8 @@ agm-map {
     width: 320px;
     max-width: 100%;
   }
+}
+
+.map-detail {
+  margin-bottom: 25px;
 }
