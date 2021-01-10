@@ -35,6 +35,9 @@ export class ApartmentDetailComponent implements OnInit {
         this.loading = false;
         console.log(this.apartment);
         this.srcImages = JSON.parse(this.apartment.pathImages);
+        console.log(typeof this.apartment.lat)
+        this.apartment.lat = JSON.parse(this.apartment.lat);
+        this.apartment.lng = JSON.parse(this.apartment.lng);
       });
   }
   dosth(event) {

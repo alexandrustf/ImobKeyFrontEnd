@@ -18,4 +18,9 @@ export class ApartmentDetails {
   public addedAt: string;
   public imagesBytes: string[];
   public pathImages: string;
+  
+  public lat ;
+  public lng ;
+
+  public data;
 }

@@ -13,7 +13,6 @@ export class ApartmentCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.apartment.pathImages)
     this.srcImage = JSON.parse(this.apartment.pathImages)[0];
   }
 }
