@@ -6,13 +6,39 @@
       <h1>{{ apartment.title }}</h1>
     </div>
 
-    <div class="images-container" *ngFor="let image of this.srcImages">
+    <!-- <div class="images-container" *ngFor="let image of this.srcImages">
         <img
         mat-card-image
         [src]="image"
         [alt]="apartment.name"
       />
-    </div>
+    </div> -->
+    <div class="images-container">
+      <mat-carousel
+        timings="250ms ease-in"
+        [autoplay]="true"
+        interval="5000"
+        color="primary"
+        maxWidth="auto"
+        maintainAspectRatio="true"
+        proportion="60"
+        lazyLoad="true"
+        [loop]="true"
+        [hideArrows]="false"
+        [hideIndicators]="false"
+        [useKeyboard]="true"
+        [useMouseWheel]="false"
+        orientation="ltr"
+      >
+      <mat-carousel-slide
+        #matCarouselSlide
+        *ngFor="let image of this.srcImages"
+        [image]="image"
+        overlayColor="#00000040"
+        [hideOverlay]="true"
+      ></mat-carousel-slide>
+    </mat-carousel>
+  </div>  
     <!-- <div class="favorite-container">
       <h3>Adaugă produsul la favorite in contul tău:</h3>
       <input
