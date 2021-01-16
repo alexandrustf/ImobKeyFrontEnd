@@ -8,4 +8,5 @@ export class FilterModel {
   public areaMin?: number;
   public areaMax?: number;
   public location: string;
+  public buySearch: boolean;
 }

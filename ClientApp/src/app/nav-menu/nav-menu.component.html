@@ -24,12 +24,17 @@
             [routerLinkActiveOptions]="{ exact: true }">
 
             <a class="navigation-bar-item" [routerLink]="['/']">Acasă</a>
-
           </div>
           <div class="navigation-bar-item-container" [routerLinkActive]="['link-active']"
             [routerLinkActive]="['active-link']">
             <a class="navigation-bar-item" [routerLink]="['/apartments-rent']"
               [routerLinkActive]="['active-link']">Închirieri</a>
+          </div>
+
+          <div class="navigation-bar-item-container" [routerLinkActive]="['link-active']"
+            [routerLinkActive]="['active-link']">
+            <a class="navigation-bar-item" [routerLink]="['/apartments-buy']"
+              [routerLinkActive]="['active-link']">Vânzări</a>
           </div>
 
           <div class="navigation-bar-item-container" [routerLinkActive]="['link-active']">

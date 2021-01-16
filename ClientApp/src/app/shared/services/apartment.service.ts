@@ -13,6 +13,9 @@ import { ApartmentDetails } from "../models/apartment-details.model";
   providedIn: "root",
 })
 export class ApartmentService {
+
+  public category: string = "apartments-rent";
+
   public constructor(private http: HttpClient) { }
 
   public getApartmentById(id: string): Observable<ApartmentDetails> {
@@ -24,6 +27,9 @@ export class ApartmentService {
   public getApartments(
     filterModel: FilterModel
   ): Observable<PageModel<Apartment>> {
+
+    console.log("category", this.category);
+
     let filters: string = "";
 
     filters = filterModel.searchBar
@@ -63,6 +69,8 @@ export class ApartmentService {
     params = filterModel.pageSize
       ? params.append("pageSize", filterModel.pageSize.toString())
       : params;
+
+    params =  params.append("category", this.category.toString());
 
     return this.http
       .get<PageModel<Apartment>>(`${environment.YourApartmentUrl}/apartments`, {

@@ -54,8 +54,12 @@ import { FooterComponent } from './footer/footer.component';
         path: "apartments-rent/detail/:id",
         component: ApartmentDetailComponent,
       },
+      {
+        path: "apartments-buy/detail/:id",
+        component: ApartmentDetailComponent,
+      },
       { path: "apartments-rent", component: ApartmentsListComponent },
-
+      { path: "apartments-buy", component: ApartmentsListComponent },
       { path: "perfect-home", component: PerfectHomeComponent },
       { path: "my-account", component: AuthComponent },
       {
