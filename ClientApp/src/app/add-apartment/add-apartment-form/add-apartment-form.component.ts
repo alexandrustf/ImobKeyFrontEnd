@@ -27,6 +27,10 @@ export class AddApartmentFormComponent implements OnInit {
   public imagesContent: string[] = [];
 
   public apartmentForm: FormGroup = new FormGroup({
+    category: new FormControl("", {
+      validators: [Validators.required],
+      updateOn: "change",
+    }),
     image: new FormControl("", {
       validators: [Validators.required],
       updateOn: "change",
@@ -82,7 +86,7 @@ export class AddApartmentFormComponent implements OnInit {
     phoneOwner: new FormControl("", {
       validators: [],
       updateOn: "change",
-    }),
+    })
   });
   constructor(
     private locationService: LocationService,
@@ -192,12 +196,18 @@ export class AddApartmentFormComponent implements OnInit {
           "constructionYear"
         ).value)
       : 0;
-
+    apartment.compartimentare = this.apartmentForm.get("compartimentare")
+      .value
+      ? (apartment.compartimentare = this.apartmentForm.get(
+          "compartimentare"
+        ).value)
+      : 0;
     apartment.location = this.selectedLocation;
     console.log("aici");
     console.log(apartment.location);
     apartment.lat = this.PreciseLocation.lat;
     apartment.lng = this.PreciseLocation.lng;
+    apartment.category =  this.apartmentForm.get("category").value;
     apartment.price = this.apartmentForm.get("price").value;
 
     apartment.imagesBytes = this.imagesContent;

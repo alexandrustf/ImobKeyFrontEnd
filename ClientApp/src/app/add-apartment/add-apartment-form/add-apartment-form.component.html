@@ -1,6 +1,19 @@
 <div class="card-body" class="card">
   <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
     <div class="add-apartment-container">
+      <div class="form-group">
+        <label> Categoria: *</label>
+        <select
+          class="form-control"
+          name="category"
+          formControlName="category"
+        >
+          <option value="apartments-rent">Închirieri</option>
+          <option value="apartments-buy">Vânzări</option>
+          <option value="undefined Category">Altă Categorie</option>
+        </select>
+      </div>
+
       <div class="add-images-container">
         <div class="form-group">
           <label for="file">Adauga pozele cu apartamentul tau: *</label>
@@ -78,9 +91,7 @@
           <label> Compartimentare: *</label>
           <select
             class="form-control"
-            type="number"
-            name="min-price"
-            min="0"
+            name="compartimentare"
             formControlName="compartimentare"
           >
             <option value="Decomandat">Decomandat</option>
@@ -208,7 +219,7 @@
   <app-spinner *ngIf="this.loading"></app-spinner>
   <!-- <p>Form Status: {{ apartmentForm.status }}</p> -->
   <div id="response" *ngIf="this.added">
-    Apartament adăugat cu success!
+    {{ this.response.message }}
   </div>
 </div>
 <!-- margin: auto;

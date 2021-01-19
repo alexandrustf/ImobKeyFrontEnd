@@ -13,7 +13,8 @@ export class CreateApartmentModel {
   public constructionYear: number;
   public lat: number;
   public lng: number;
-  // public partitioningType: string;
+  public category: string;
+  public compartimentare: string;
   // public postedBy: string;
   // public building: string;
   public phoneOwner: string;
